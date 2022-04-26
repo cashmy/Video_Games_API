@@ -16,7 +16,7 @@ namespace ASP_NET_Video_Games_API.Controllers
             _context = context;
         }
 
-        [HttpGet]
+        [HttpGet("publishers")]
         public IActionResult GetPublishers()
         {
             var videoGamePublishers = _context.VideoGames
@@ -25,7 +25,7 @@ namespace ASP_NET_Video_Games_API.Controllers
             return Ok(videoGamePublishers);
         }
 
-        [HttpGet("{pubName}")]
+        [HttpGet("publishers/{pubName}")]
         public IActionResult GetGamesByPublisher(string pubName)
         {
             //int? maxYear = _context.VideoGames.Select(vg => vg.Year).Max();
